@@ -1,13 +1,57 @@
 :root {
     --bg: #FFFFEE;
     --bg2: #F6F4D9;
-    --card: #FFFFF8;
+    --card: #ffffeb;
     --tx: #1b1814;
     --mut: #625a4d;
     --ac: #8c6a2b;
+    --wa: #25d366;
     --ln: rgba(27, 24, 20, .14);
     --serif: "Cormorant Garamond", Georgia, serif;
     --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+
+    --radius-pill: 99px;
+    --radius-circle: 50%;
+    --radius-xl: 24px;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --shadow-1: 0 1px 3px rgba(27, 24, 20, .08), 0 1px 2px rgba(27, 24, 20, .06);
+    --shadow-2: 0 4px 12px rgba(27, 24, 20, .1), 0 2px 4px rgba(27, 24, 20, .06);
+    --shadow-3: 0 12px 28px rgba(27, 24, 20, .12), 0 4px 8px rgba(27, 24, 20, .08);
+    --shadow-4: 0 20px 40px rgba(27, 24, 20, .15), 0 8px 16px rgba(27, 24, 20, .1);
+
+    --icon-sm: 16px;
+    --icon-md: 20px;
+    --icon-lg: 24px;
+    --icon-xl: 32px;
+
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms cubic-bezier(.2, .7, .2, 1);
+    --transition-slow: 400ms cubic-bezier(.2, .7, .2, 1);
+
+    --text-display-xl: clamp(56px, 10vw, 120px);
+    --text-display-lg: clamp(44px, 7vw, 80px);
+    --text-display-md: clamp(36px, 5vw, 56px);
+    --text-heading-lg: clamp(32px, 4vw, 44px);
+    --text-heading-md: clamp(24px, 3vw, 32px);
+    --text-heading-sm: clamp(20px, 2.5vw, 26px);
+    --text-body-lg: 18px;
+    --text-body-md: 16px;
+    --text-body-sm: 14px;
+    --text-caption: 12px;
+    --text-eyebrow: 12px;
+
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -36,6 +80,12 @@ body {
 a {
     color: inherit;
     text-decoration: none
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ac) 30%, transparent);
+    border-radius: 4px
 }
 
 .wrap {
@@ -139,23 +189,51 @@ nav ul a:hover::after {
     align-items: center;
     gap: 10px;
     padding: 13px 26px;
-    border-radius: 99px;
+    border-radius: var(--radius-pill);
     font-weight: 600;
     font-size: 14px;
     background: var(--ac);
     color: var(--bg);
-    transition: transform .25s, box-shadow .25s
+    transition: transform var(--transition-base), box-shadow var(--transition-base)
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px var(--ac)
+    box-shadow: var(--shadow-3)
 }
 
 .btn.o {
     background: transparent;
     color: var(--tx);
     border: 1px solid var(--ln)
+}
+
+.btn-secondary {
+    background: var(--bg2);
+    color: var(--tx);
+    border: 1px solid var(--ln)
+}
+
+.btn-secondary:hover {
+    background: var(--ln);
+    box-shadow: var(--shadow-2)
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--ac);
+    border: none
+}
+
+.btn-ghost:hover {
+    background: color-mix(in srgb, var(--ac) 10%, transparent)
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none
 }
 
 .hero {
@@ -195,8 +273,8 @@ nav ul a:hover::after {
 }
 
 .hero h1 {
-    font-size: clamp(48px, 9vw, 72px);
-    max-width: 11ch
+    font-size: clamp(48px, 9vw, 120px);
+    max-width: var(--maxw, 14ch)
 }
 
 .hero h1 em {
@@ -228,24 +306,24 @@ nav ul a:hover::after {
 
 .chips span {
     border: 1px solid var(--ln);
-    border-radius: 99px;
+    border-radius: var(--radius-pill);
     padding: 7px 16px
 }
 
 section {
-    padding: 110px 0
+    padding: var(--space-4xl) 0
 }
 
 .about {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 64px;
+    gap: var(--space-3xl);
     align-items: start
 }
 
 .about p {
     color: var(--mut);
-    margin: 0 0 18px
+    margin: 0 0 var(--space-lg)
 }
 
 .stats {
@@ -254,9 +332,9 @@ section {
     gap: 1px;
     background: var(--ln);
     border: 1px solid var(--ln);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    margin-top: 40px
+    margin-top: var(--space-xl)
 }
 
 .stats div {
@@ -284,18 +362,19 @@ section {
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 56px
+    gap: var(--space-lg);
+    margin-top: var(--space-3xl)
 }
 
 .card {
     background: var(--card);
     border: 1px solid var(--ln);
-    border-radius: 22px;
+    border-radius: var(--radius-xl);
     padding: 36px 30px 32px;
     position: relative;
     overflow: hidden;
-    transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .3s
+    box-shadow: var(--shadow-1);
+    transition: transform var(--transition-slow), border-color var(--transition-base), box-shadow var(--transition-base)
 }
 
 .card::before {
@@ -304,12 +383,13 @@ section {
     inset: 0;
     background: radial-gradient(300px circle at var(--x, 50%) var(--y, 0%), color-mix(in srgb, var(--ac) 20%, transparent), transparent 60%);
     opacity: 0;
-    transition: opacity .3s
+    transition: opacity var(--transition-base)
 }
 
 .card:hover {
     transform: translateY(-8px);
-    border-color: var(--ac)
+    border-color: var(--ac);
+    box-shadow: var(--shadow-3)
 }
 
 .card:hover::before {
@@ -356,15 +436,31 @@ section {
 
 .why {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 56px;
-    border-top: 1px solid var(--ln)
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 56px
 }
 
 .why div {
-    padding: 34px 28px 34px 0;
-    border-bottom: 1px solid var(--ln)
+    padding: 32px;
+    border: 1px solid var(--ln);
+    border-radius: var(--radius-xl);
+    background: var(--card);
+    box-shadow: var(--shadow-1);
+    transition: transform var(--transition-slow), border-color var(--transition-base), box-shadow var(--transition-base)
+}
+
+.why div:hover {
+    transform: translateY(-4px);
+    border-color: var(--ac);
+    box-shadow: var(--shadow-2)
+}
+
+.why-ico {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    color: var(--ac);
+    margin-bottom: var(--space-md)
 }
 
 .why h3 {
@@ -378,16 +474,8 @@ section {
     font-size: 15px
 }
 
-.why h3 span {
-    color: var(--ac);
-    font-size: 14px;
-    font-family: var(--sans);
-    margin-right: 10px
-}
-
 .contact {
     text-align: center;
-    background: var(--bg2);
     position: relative;
     overflow: hidden
 }
@@ -405,31 +493,6 @@ section {
 
 .contact-hero {
     margin-bottom: 72px
-}
-
-.contact-quick {
-    margin: 40px 0 0
-}
-
-.contact-quick .tel {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--serif);
-    font-size: clamp(34px, 6vw, 64px);
-    color: var(--ac);
-    text-decoration: none;
-    transition: letter-spacing .4s, transform .3s
-}
-
-.contact-quick .tel:hover {
-    letter-spacing: .03em;
-    transform: translateY(-2px)
-}
-
-.contact-quick .ico {
-    font-size: 0.75em;
-    line-height: 1
 }
 
 .tel {
@@ -473,10 +536,11 @@ section {
 .contact-card {
     background: var(--card);
     border: 1px solid var(--ln);
-    border-radius: 30px;
-    padding: 48px 44px;
+    border-radius: var(--radius-xl);
+    padding: 18px 18px;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    box-shadow: var(--shadow-1)
 }
 
 .contact-card::before {
@@ -485,7 +549,7 @@ section {
     inset: 0;
     background: linear-gradient(120deg, color-mix(in srgb, var(--ac) 12%, transparent), transparent);
     opacity: 0;
-    transition: opacity .4s
+    transition: opacity var(--transition-base)
 }
 
 .contact-card:hover::before {
@@ -500,13 +564,14 @@ section {
 
 .info-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     color: var(--mut);
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 26px;
-    gap: 30px
+    gap: 16px
 }
 
 .info-label {
@@ -527,13 +592,19 @@ section {
 }
 
 .ico {
-    font-size: 20px;
+    width: var(--icon-md);
+    height: var(--icon-md);
     line-height: 1;
-    flex-shrink: 0
+    flex-shrink: 0;
+    color: var(--ac)
+}
+
+.ico svg {
+    width: 100%;
+    height: 100%
 }
 
 .info-value {
-    text-align: right;
     color: var(--mut)
 }
 
@@ -639,17 +710,17 @@ footer .wrap {
 }
 
 .career {
-    padding: 70px 0
+    padding: var(--space-3xl) 0
 }
 
 .band {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: var(--space-lg);
     flex-wrap: wrap;
     border: 1px solid var(--ln);
-    border-radius: 26px;
+    border-radius: var(--radius-lg);
     padding: 44px 40px;
     background: linear-gradient(120deg, var(--card), var(--bg2))
 }
@@ -659,7 +730,7 @@ footer .wrap {
 }
 
 .band p {
-    margin: 10px 0 0;
+    margin: var(--space-sm) 0 0;
     color: var(--mut);
     max-width: 46ch
 }
@@ -667,15 +738,21 @@ footer .wrap {
 .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: var(--space-sm);
     max-width: 720px;
-    margin: 48px auto 0;
     text-align: left
+}
+
+.form-hint {
+    grid-column: 1/-1;
+    color: var(--mut);
+    font-size: var(--text-body-md);
+    margin-bottom: var(--space-lg)
 }
 
 .form label {
     display: grid;
-    gap: 6px;
+    gap: var(--space-xs);
     font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
@@ -696,9 +773,9 @@ footer .wrap {
     color: var(--tx);
     background: var(--bg);
     border: 1px solid var(--ln);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 14px 16px;
-    transition: border-color .25s, box-shadow .25s, background .25s
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast)
 }
 
 .form input:hover,
@@ -712,7 +789,7 @@ footer .wrap {
 .form textarea:focus {
     outline: none;
     border-color: var(--ac);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ac) 25%, transparent)
+    box-shadow: var(--focus-ring)
 }
 
 .form button {
@@ -729,23 +806,27 @@ footer .wrap {
     z-index: 25;
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: var(--space-sm)
 }
 
 .fab a {
     width: 54px;
     height: 54px;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     display: grid;
     place-items: center;
-    background: #25d366;
+    background: var(--wa);
     color: #fff;
-    box-shadow: 0 10px 28px -8px rgba(0, 0, 0, .6);
-    transition: transform .25s
+    box-shadow: var(--shadow-3);
+    transition: transform var(--transition-base)
 }
 
 .fab a:hover {
     transform: scale(1.1)
+}
+
+.fab a:active {
+    transform: scale(0.95)
 }
 
 .fab a.c {
@@ -773,9 +854,9 @@ footer .wrap {
     border: 1px solid var(--ln);
     background: transparent;
     color: var(--mut);
-    border-radius: 99px;
+    border-radius: var(--radius-pill);
     padding: 9px 20px;
-    transition: all .25s
+    transition: all var(--transition-base)
 }
 
 .tab:hover {
@@ -792,20 +873,22 @@ footer .wrap {
 .pj {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px
+    gap: var(--space-lg)
 }
 
 .pc {
     border: 1px solid var(--ln);
-    border-radius: 22px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     background: var(--card);
-    transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .3s
+    box-shadow: var(--shadow-1);
+    transition: transform var(--transition-slow), border-color var(--transition-base), box-shadow var(--transition-base)
 }
 
 .pc:hover {
     transform: translateY(-8px);
-    border-color: var(--ac)
+    border-color: var(--ac);
+    box-shadow: var(--shadow-3)
 }
 
 .pc.hid {
@@ -1098,10 +1181,6 @@ footer p {
     transform: scale(1.08)
 }
 
-.rv {
-    background: var(--bg2)
-}
-
 .rq {
     max-width: 760px;
     margin: 48px auto 0;
@@ -1133,13 +1212,13 @@ footer p {
 .rn button {
     width: 44px;
     height: 44px;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     border: 1px solid var(--ln);
     background: transparent;
     color: var(--tx);
     cursor: pointer;
     font-size: 18px;
-    transition: all .25s
+    transition: all var(--transition-base)
 }
 
 .rn button:hover {
@@ -1182,19 +1261,40 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 0 36px;
+    gap: var(--space-lg);
+    padding: 0 var(--space-xl);
     font-family: var(--serif);
-    font-size: 40px;
+    font-size: clamp(28px, 5vw, 32px);
     font-weight: 600;
     transform: translateY(-100%);
-    transition: transform .55s cubic-bezier(.2, .7, .2, 1);
+    transition: transform var(--transition-slow), visibility var(--transition-slow);
     visibility: hidden
+}
+
+.mm::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffeb;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    pointer-events: none
 }
 
 .mm.o {
     transform: none;
     visibility: visible
+}
+
+.mm.o::before {
+    opacity: 1;
+    pointer-events: auto
+}
+
+.mm a {
+    position: relative;
+    z-index: 1
 }
 
 .mm a:hover {
@@ -1234,12 +1334,12 @@ footer p {
     right: 18px;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     border: 0;
     font-size: 26px;
     cursor: pointer;
-    background: #f3eee6;
-    color: #111
+    background: var(--bg);
+    color: var(--tx)
 }
 
 @media(max-width:860px) {
@@ -1274,7 +1374,7 @@ footer p {
     }
 
     .why div {
-        padding: 26px 0
+        padding: 26px
     }
 }
 
