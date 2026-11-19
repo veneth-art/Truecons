@@ -12,23 +12,27 @@
         href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8F%9B%EF%B8%8F%3C/text%3E%3C/svg%3E">
     <title>Truecons | Design. Build. Inspire.</title>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header id="h">
+    <header class="site-header" id="h">
         <div class="wrap">
-            <nav>
-                <a class="logo" href="#top">True<b>cons</b></a>
-                <ul>
+            <nav class="nav-main">
+                <a class="logo" href="#top">True<b>cons</b><span class="logo-tag">Construction & Design</span></a>
+                <ul class="nav-links">
+                    <li><a href="#top" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#why">Why Truecons</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="header-actions">
+                    <a class="phone-link" href="tel:+918122603565">+91 81226 03565</a>
+                    <a class="btn btn-dark" href="#contact">Free quote <span class="icon-circle" aria-hidden="true">↗</span></a>
+                </div>
                 <button class="bg" id="bg" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
             </nav>
         </div>
@@ -41,35 +45,34 @@
     </div>
 
 <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-bg" aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80&auto=format&fit=crop"
-                    alt="" loading="eager" fetchpriority="high">
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="grid"></div>
-            <div class="wrap hero-content">
-                <div class="hero-inner">
-                    <span class="eyebrow r" style="--d:.1s">Design. Build. Inspire.</span>
-                    <h1 id="hero-title" class="r" style="--d:.25s;--maxw:14ch">We build with your <em>dreams</em> and ideas.</h1>
-                    <p class="r" style="--d:.45s">Truecons is a construction company offering architectural design,
-                        interior design and construction management, from one team.</p>
-                    <div class="cta r" style="--d:.6s"><a class="btn" href="#contact">Start your project</a><a
-                            class="btn o" href="#services">Our services</a></div>
-                    <div class="chips r" style="--d:.75s"><span>Building &
-                            Construction</span><span>Architecture</span><span>Interior Design</span></div>
-                    <div class="hero-stats r" style="--d:.9s">
-                        <div class="stat"><strong data-n="2">0</strong><span>Cities served</span></div>
-                        <div class="stat"><strong data-n="6">0</strong><span>Featured projects</span></div>
-                        <div class="stat"><strong data-n="15">0</strong><span>Years experience</span></div>
+        <section class="hero-wrapper" aria-labelledby="hero-title">
+            <div class="hero-card">
+                <div class="hero-bg" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80&auto=format&fit=crop"
+                        alt="" loading="eager" fetchpriority="high">
+                    <div class="hero-scrub"></div>
+                </div>
+                <div class="wrap hero-content">
+                    <div class="hero-inner">
+                        <span class="eyebrow r" style="--d:.1s">Design. Build. Inspire.</span>
+                        <h1 id="hero-title" class="r" style="--d:.25s;--maxw:14ch">We build with your <em>dreams</em> and ideas.</h1>
+                        <p class="r" style="--d:.45s">Truecons is a construction company offering architectural design,
+                            interior design and construction management, from one team.</p>
+                        <div class="hero-cta-group r" style="--d:.6s">
+                            <a class="btn btn-light" href="#contact">Start your project <span class="icon-circle" aria-hidden="true">↗</span></a>
+                            <a class="btn btn-glass" href="#services">Our services <span class="icon-circle" aria-hidden="true">↗</span></a>
+                        </div>
+                        <div class="chips r" style="--d:.75s"><span>Building &
+                                Construction</span><span>Architecture</span><span>Interior Design</span></div>
+                        <div class="hero-stats r" style="--d:.9s">
+                            <div class="stat"><strong data-n="2">0</strong><span>Cities served</span></div>
+                            <div class="stat"><strong data-n="6">0</strong><span>Featured projects</span></div>
+                            <div class="stat"><strong data-n="15">0</strong><span>Years experience</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-scroll" aria-hidden="true"><span></span></div>
         </section>
-                </figure>
-            </div>
-        </div>
 
         <section id="about">
             <div class="wrap about">
