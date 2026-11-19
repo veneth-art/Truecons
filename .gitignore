@@ -1,2 +1,12 @@
 .DS_Store
 node_modules/
+
+#skills
+.agents/
+
+#env
+.env*
+
+#debug log
+.debug.log
+
