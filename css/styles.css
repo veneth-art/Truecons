@@ -409,7 +409,7 @@ h2 {
 }
 
 .eyebrow {
-    color: var(--ac-light);
+    color: #88e78b;
     font-family: var(--sans);
     font-weight: 500;
     font-size: clamp(11px, 1.2vw, 12px);
