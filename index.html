@@ -40,23 +40,33 @@
         <p></p><button aria-label="Close">&times;</button>
     </div>
 
-    <main id="top">
-        <div class="hero">
+<main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80&auto=format&fit=crop"
+                    alt="" loading="eager" fetchpriority="high">
+                <div class="hero-overlay"></div>
+            </div>
             <div class="grid"></div>
-            <div class="wrap hw">
-                <div class="ht">
+            <div class="wrap hero-content">
+                <div class="hero-inner">
                     <span class="eyebrow r" style="--d:.1s">Design. Build. Inspire.</span>
-                    <h1 class="r" style="--d:.25s;--maxw:14ch">We build with your <em>dreams</em> and ideas.</h1>
+                    <h1 id="hero-title" class="r" style="--d:.25s;--maxw:14ch">We build with your <em>dreams</em> and ideas.</h1>
                     <p class="r" style="--d:.45s">Truecons is a construction company offering architectural design,
                         interior design and construction management, from one team.</p>
                     <div class="cta r" style="--d:.6s"><a class="btn" href="#contact">Start your project</a><a
                             class="btn o" href="#services">Our services</a></div>
-                    <div class="chips r" style="--d:.75s"><span>Building &amp;
+                    <div class="chips r" style="--d:.75s"><span>Building &
                             Construction</span><span>Architecture</span><span>Interior Design</span></div>
+                    <div class="hero-stats r" style="--d:.9s">
+                        <div class="stat"><strong data-n="2">0</strong><span>Cities served</span></div>
+                        <div class="stat"><strong data-n="6">0</strong><span>Featured projects</span></div>
+                        <div class="stat"><strong data-n="15">0</strong><span>Years experience</span></div>
+                    </div>
                 </div>
-                <figure class="hv"><img src="images/katpadi.jpg"
-                        alt="Modern two-storey home with pergola terrace, Katpadi">
-                    <figcaption>Katpadi &middot; 3D design</figcaption>
+            </div>
+            <div class="hero-scroll" aria-hidden="true"><span></span></div>
+        </section>
                 </figure>
             </div>
         </div>
