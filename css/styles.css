@@ -1,7 +1,7 @@
 :root {
     --bg: #F5F3EB;
     --bg2: #EDEAE3;
-    --card: #FFFFFF;
+    --card: #f2ffee;
     --tx: #1C1E1D;
     --mut: #6B6B66;
     --ac: #3A4F3C;
@@ -217,6 +217,8 @@ h2 {
 .btn {
     display: inline-flex;
     align-items: center;
+    color: #ffffeb;
+    background: #3a4f3c;
     gap: 10px;
     padding: 14px 28px;
     border-radius: var(--radius-pill);
@@ -482,34 +484,48 @@ h2 {
     .hero-wrapper {
         padding: var(--space-xl) var(--space-md)
     }
+
     .hero-card {
         border-radius: var(--radius-lg)
     }
+
     .hero-bg {
         aspect-ratio: 4/3
     }
+
     .hero-content {
         padding: var(--space-2xl) var(--space-lg)
     }
+
     .hero-inner {
         max-width: 100%
     }
+
     .hero h1 {
         font-size: clamp(32px, 8vw, 48px)
     }
+
     .hero-cta-group {
         flex-direction: column
     }
+
     .hero-cta-group .btn {
         width: 100%;
         justify-content: center
     }
+
     .hero-stats {
         grid-template-columns: 1fr;
         gap: var(--space-md)
     }
-    .hero-stats .stat { text-align: left }
-    .hero-stats .stat strong { font-size: clamp(32px, 8vw, 48px) }
+
+    .hero-stats .stat {
+        text-align: left
+    }
+
+    .hero-stats .stat strong {
+        font-size: clamp(32px, 8vw, 48px)
+    }
 }
 
 section {
@@ -569,7 +585,7 @@ section {
 }
 
 .card {
-    background: var(--card);
+    background: #f2ffee;
     border: 1px solid var(--ln);
     border-radius: var(--radius-xl);
     padding: 36px 30px 32px;
