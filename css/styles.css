@@ -539,6 +539,27 @@ section {
     align-items: start
 }
 
+.ai {
+    margin: 0;
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--ln);
+    aspect-ratio: 4/3
+}
+
+.ai img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow)
+}
+
+.ai:hover img {
+    transform: scale(1.05)
+}
+
 .about p {
     color: var(--mut);
     margin: 0 0 var(--space-lg)
