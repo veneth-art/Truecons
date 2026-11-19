@@ -566,16 +566,16 @@ h2 {
 
     .hero-inner p,
     .hero p {
-        font-size: 15px;
+        /* font-size: 15px;
         line-height: 1.55;
         margin-bottom: 22px;
-        max-width: none;
+        max-width: none; */
     }
 
     .hero-cta-group {
         flex-direction: column;
-        gap: 10px;
-        margin-bottom: 24px;
+        /*gap: 10px;
+        margin-bottom: 24px; */
         width: 100%;
     }
 
@@ -608,28 +608,28 @@ h2 {
         font-size: 12px;
     }
 
-.hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(16px, 3vw, 32px);
-    padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
-}
+    .hero-stats {
+        display: flex;
+        /*flex-wrap: wrap;*/
+        justify-content: center;
+        gap: clamp(16px, 3vw, 32px);
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
 
-.hero-stats .stat {
-    text-align: center;
-    flex: 1 1 140px;
-}
+    .hero-stats .stat {
+        text-align: center;
+        flex: 1 1 140px;
+    }
 
-.hero-stats .stat strong {
-    font-size: clamp(24px, 6.5vw, 34px);
-}
+    .hero-stats .stat strong {
+        font-size: clamp(24px, 6.5vw, 34px);
+    }
 
-.hero-stats .stat span {
-    font-size: 10px;
-    letter-spacing: .06em;
-}
+    .hero-stats .stat span {
+        font-size: 10px;
+        letter-spacing: .06em;
+    }
 }
 
 @media (max-width: 520px) {
@@ -660,9 +660,9 @@ h2 {
 
     .hero-inner p,
     .hero p {
-        font-size: 13.5px;
+        /* font-size: 13.5px;
         line-height: 1.5;
-        margin-bottom: 16px;
+        margin-bottom: 16px; */
     }
 
     .eyebrow {
@@ -671,18 +671,18 @@ h2 {
     }
 
     .hero-cta-group {
-        gap: 8px;
-        margin-bottom: 18px;
+        /* gap: 8px;
+        margin-bottom: 18px; */
     }
 
     .hero-cta-group .btn {
-        padding: 11px 16px;
-        font-size: 13.5px;
+        /* padding: 11px 16px;
+        font-size: 13.5px; */
     }
 
     .chips {
-        gap: 6px;
-        margin-bottom: 20px;
+        /* gap: 6px;
+        margin-bottom: 20px; */
     }
 
     .chips span {
@@ -691,7 +691,7 @@ h2 {
     }
 
     .hero-stats {
-        padding-top: 14px;
+        /* padding-top: 14px; */
     }
 
     .hero-stats .stat strong {
@@ -708,7 +708,7 @@ section {
 }
 
 .about {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1.2fr;
     gap: var(--space-3xl);
     align-items: start
@@ -737,7 +737,7 @@ section {
 
 .about p {
     color: var(--mut);
-    margin: 0 0 var(--space-lg)
+    /* margin: 0 0 var(--space-lg) */
 }
 
 .stats {
@@ -1666,7 +1666,7 @@ footer p {
 .mm a {
     position: relative;
     z-index: 1;
-    color: var(--tx);
+    /* color: var(--tx); */
     text-decoration: none;
     transition: color var(--transition-fast), transform var(--transition-fast);
 }
