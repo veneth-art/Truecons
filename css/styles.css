@@ -296,6 +296,11 @@ h2 {
     box-shadow: var(--shadow-3)
 }
 
+.btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: var(--shadow-1)
+}
+
 .btn.o {
     background: transparent;
     color: var(--tx);
@@ -525,6 +530,66 @@ h2 {
 
     .hero-stats .stat strong {
         font-size: clamp(32px, 8vw, 48px)
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-wrapper {
+        padding: var(--space-lg) var(--space-sm)
+    }
+
+    .hero-card {
+        border-radius: var(--radius-md)
+    }
+
+    .hero-bg {
+        aspect-ratio: 3/2
+    }
+
+    .hero-content {
+        padding: var(--space-xl) var(--space-md)
+    }
+
+    .hero h1 {
+        font-size: clamp(28px, 10vw, 40px)
+    }
+
+    .hero p {
+        font-size: clamp(14px, 3.5vw, 16px)
+    }
+
+    .eyebrow {
+        font-size: 11px
+    }
+
+    .hero-cta-group {
+        gap: var(--space-sm)
+    }
+
+    .hero-cta-group .btn {
+        padding: var(--space-md) var(--space-lg);
+        font-size: 14px
+    }
+
+    .chips {
+        gap: var(--space-xs)
+    }
+
+    .chips span {
+        padding: 6px 14px;
+        font-size: 12px
+    }
+
+    .hero-stats {
+        gap: var(--space-sm)
+    }
+
+    .hero-stats .stat strong {
+        font-size: clamp(28px, 10vw, 40px)
+    }
+
+    .hero-stats .stat span {
+        font-size: 11px
     }
 }
 
